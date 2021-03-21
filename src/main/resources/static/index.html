@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+          crossorigin="anonymous">
+</head>
+<body>
+    <main class="container-sm">
+        <h1>Podaj dane</h1>
+        <form method="post" action="addByForm">
+            <div class ="mb-3">
+                <label class="form-label">Imię</label>
+                <input class="form-control" type="text" placeholder="Imię" name="imie">
+            </div>
+
+            <div class ="mb-3">
+                <label class="form-label">Nazwisko</label>
+                <input class="form-control" type="text" placeholder="nazwisko" name="nazwisko">
+            </div>
+
+            <div class ="mb-3">
+                <label class="form-label">Wiek</label>
+                <input class="form-control" type = "number" placeholder="wiek" name="wiek">
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Prześlij">
+            </div>
+        </form>
+    </main>
+</body>
+</html>
