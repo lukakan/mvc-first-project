@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class UserController {
-    UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Autowired
     public UserController(UserRepository userRepository) {
@@ -25,7 +26,7 @@ public class UserController {
         String result = "";
         result = users.stream()
                 .map(user -> user.toString() + "</br>")
-                .reduce(result, (a, b) -> a + b);
+                .collect(Collectors.joining());
         return result;
     }
 
@@ -36,7 +37,7 @@ public class UserController {
         return validateAndAdd(firstName, lastName, age);
     }
 
-    @PostMapping("/addByForm")
+    @PostMapping("/add")
     public String addByForm(@RequestParam(name = "imie", defaultValue = "") String firstName,
                             @RequestParam(name = "nazwisko") String lastName,
                             @RequestParam(name = "wiek") int age) {
