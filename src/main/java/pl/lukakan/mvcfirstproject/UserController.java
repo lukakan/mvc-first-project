@@ -47,8 +47,9 @@ public class UserController {
     private String validateAndAdd(String firstName, String lastName, int age) {
         if (firstName.equals("")) {
             return "redirect:/err.html";
+        } else {
+            userRepository.add(new User(firstName, lastName, age));
+            return "redirect:/success.html";
         }
-        userRepository.add(new User(firstName, lastName, age));
-        return "redirect:/success.html";
     }
 }
