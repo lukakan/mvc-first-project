@@ -25,8 +25,8 @@ public class UserController {
         List<User> users = userRepository.getAll();
         String result = "";
         result = users.stream()
-                .map(user -> user.toString() + "</br>")
-                .collect(Collectors.joining());
+                .map(User::toString)
+                .collect(Collectors.joining("</br>"));
         return result;
     }
 
